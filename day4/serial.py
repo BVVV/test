@@ -2,4 +2,6 @@ import pickle
 
 
 class Person(object):
-    pass
+    def __init__(self, name):
+        self.name = name
+
