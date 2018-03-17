@@ -20,11 +20,6 @@ class Reg(object):
         self.cond = cond
         self.superior = superior
 
-    def islighten(self):
-        self.superior.name
-        return eval(self.cond)
-
-
 class Ins(object):
     def __init__(self, name, cond):
         self.name = name
