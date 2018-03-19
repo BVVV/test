@@ -20,12 +20,6 @@ class Reg(object):
         self.cond = cond
         self.superior = superior
 
-class Ins(object):
-    def __init__(self, name, cond):
-        self.name = name
-        self.cond = cond
-
-
 stimgen = Stimgen()
 ir = Reg("ir", 8, 0x2, True)
 stimgen.addreg(ir)
