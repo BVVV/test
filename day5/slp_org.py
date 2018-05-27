@@ -24,10 +24,9 @@ def draw_line(w, b):
             line_y[i] = (-w[0] * line_x[i] - b)/w[1]
     plt.plot(line_x, line_y)
 
-x = np.array([[3,3], [4,3], [1,1]])
-y = np.array([1,1,-1])
-
-w = [0, 0]
+x = np.array([[3, 3], [4, 3], [1, 1], [2, 1], [3, 1], [2, 8]])
+y = np.array([1, 1, -1, -1, 1, 1])
+w = [1, 0]
 b = 0
 lr = 1
 

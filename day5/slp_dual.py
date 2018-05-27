@@ -2,12 +2,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def draw_pts(x, y):
     for i in range(len(y)):
         if y[i] == 1:
             plt.plot(*x[i], 'ro')
         else:
             plt.plot(*x[i], 'bo')
+
 
 def draw_line(w, b):
     line_x = [0, 10]
@@ -23,17 +25,20 @@ def draw_line(w, b):
             line_y[i] = (-w[0] * line_x[i] - b)/w[1]
     plt.plot(line_x, line_y)
 
-x = np.array([[3,3], [4,3], [1,1]])
-y = np.array([1,1,-1])
+x = np.array([[3, 3], [4, 3], [1, 1], [2, 1], [3, 1], [2, 8]])
+y = np.array([1, 1, -1, -1, 1, 1])
+w = np.array([1, 0])
+m = np.dot(x, w)
 
 gram = np.dot(x, x.T)
 print(gram)
 
-a = np.array([0, 0, 0])
+l = [0] * len(y)
+a = np.array(l)
 for j in range(100):
     wrong_pt_cnt = 0
     for i in range(len(y)):
-        c = 0
+        c = m[i]
         b = 0
         for k in range(len(y)):
             c += a[k] * y[k] * gram[k][i]
@@ -48,7 +53,6 @@ for j in range(100):
 
 print(a)
 
-w = [0, 0]
 for k in range(len(y)):
     w += a[k] * y[k] * x[k]
 
